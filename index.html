@@ -89,12 +89,14 @@
         <div class="highlight-box">
             <p><strong>Objetivo:</strong> Este asistente utiliza Inteligencia Artificial para actuar como un
                 <strong>Experto en Metodología de Scoping Reviews y Mentor en Equidad en Salud</strong>. Te guiará paso
-                a paso para:</p>
+                a paso para:
+            </p>
             <ol>
                 <li>Formular tu pregunta de revisión usando la estructura <strong>PICO o PCC</strong> garantizando un
                     foco innegociable en la <strong>Equidad en Salud</strong>.</li>
                 <li>Identificar explícitamente <strong>poblaciones en desventaja socioeconómica</strong> y
-                    <strong>determinantes sociales de la salud (DSS)</strong> que serán mapeados en tu revisión.</li>
+                    <strong>determinantes sociales de la salud (DSS)</strong> que serán mapeados en tu revisión.
+                </li>
                 <li>Asegurar que tu propuesta sea coherente con lineamientos estándar (ej. manual JBI y elementos
                     PRISMA-ScR).</li>
             </ol>
@@ -180,7 +182,7 @@ INSTRUCCIÓN INICIAL: Saluda al estudiante calurosamente como un experto Metodó
             }
 
             // Construir el prompt final
-            const fullPrompt = \`\${SYSTEM_PROMPT}\n\n[CONTEXTO DEL ESTUDIANTE]\nEl estudiante está interesado en investigar y mapear literatura sobre: "\${topic}".\n\nPor favor inicia la sesión siguiendo las Instrucciones Iniciales.\`;
+            const fullPrompt = `${SYSTEM_PROMPT}\n\n[CONTEXTO DEL ESTUDIANTE]\nEl estudiante está interesado en investigar y mapear literatura sobre: "${topic}".\n\nPor favor inicia la sesión siguiendo las Instrucciones Iniciales.`;
 
             // Codificar y abrir ChatGPT
             const url = "https://chat.openai.com/?prompt=" + encodeURIComponent(fullPrompt);
