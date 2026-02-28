@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Asistente PICO y Scoping Review con enfoque de Equidad – Universidad Nacional de Colombia</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 40px;
+            max-width: 900px;
+            color: #333;
+            background-color: #f4f6f9;
+        }
+
+        h1 {
+            color: #0056b3;
+            text-align: center;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .highlight-box {
+            background-color: #e3f2fd;
+            border-left: 5px solid #0056b3;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        textarea {
+            width: 100%;
+            border: 1px solid #ccc;
+            padding: 15px;
+            font-family: inherit;
+            border-radius: 5px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 20px;
+            background-color: #0056b3;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #004494;
+        }
+
+        hr {
+            margin: 40px 0;
+            border: 0;
+            border-top: 1px solid #eee;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Asistente Metodológico: PICO para Scoping Review con Enfoque en Equidad</h1>
+
+        <div class="highlight-box">
+            <p><strong>Objetivo:</strong> Este asistente utiliza Inteligencia Artificial para actuar como un
+                <strong>Experto en Metodología de Scoping Reviews y Mentor en Equidad en Salud</strong>. Te guiará paso
+                a paso para:</p>
+            <ol>
+                <li>Formular tu pregunta de revisión usando la estructura <strong>PICO o PCC</strong> garantizando un
+                    foco innegociable en la <strong>Equidad en Salud</strong>.</li>
+                <li>Identificar explícitamente <strong>poblaciones en desventaja socioeconómica</strong> y
+                    <strong>determinantes sociales de la salud (DSS)</strong> que serán mapeados en tu revisión.</li>
+                <li>Asegurar que tu propuesta sea coherente con lineamientos estándar (ej. manual JBI y elementos
+                    PRISMA-ScR).</li>
+            </ol>
+        </div>
+
+        <p>
+            <strong>Instrucciones:</strong>
+            <br>1. Escribe tu <strong>Tema General</strong> o la idea inicial que tienes en mente en el recuadro de
+            abajo.
+            <br>2. Haz clic en "Iniciar Asistente en ChatGPT".
+            <br>3. Sigue las instrucciones del Mentor y <strong>responde a sus preguntas una por una.</strong>
+        </p>
+
+        <h2>¿Qué tema o ámbito de equidad en salud te interesa mapear hoy?</h2>
+        <textarea id="topic" rows="5"
+            placeholder="Ejemplo: Quiero hacer una scoping review sobre cómo la telemedicina en diabetes impacta o refleja las disparidades según el estrato socioeconómico..."></textarea>
+
+        <button onclick="startSession()">
+            Iniciar Asistente en ChatGPT ↗
+        </button>
+
+        <p style="text-align: center; font-size: 0.9em; color: #666; margin-top: 20px;">
+            <em>Nota: Este asistente te redirigirá a ChatGPT con las instrucciones precargadas. Asegúrate de haber
+                iniciado sesión en OpenAI antes de hacer clic.</em>
+        </p>
+
+        <hr>
+
+        <footer>
+            Creado en la Facultad de Medicina, Universidad Nacional de Colombia
+        </footer>
+    </div>
+
+    <script>
+        /* ==========================
+           PROMPT DE PICO SCOPING REVIEW + EQUIDAD
+           ========================== */
+        const SYSTEM_PROMPT = `Eres un **Experto en Metodología de Scoping Reviews (Revisiones de Alcance) y Mentor en Equidad en Salud**. Tu misión es guiar al estudiante para configurar la pregunta de investigación y los elementos clave de una Scoping Review rigurosa y publicable, que integre explícitamente un lente de **Equidad en Salud** y **Determinantes Sociales de la Salud (DSS)**, guiado por los marcos de Sir Michael Marmot.
+
+Tus instrucciones combinan los lineamientos metodológicos del **JBI Manual for Evidence Synthesis** y **PRISMA-ScR** con la exigencia innegociable de visibilizar inequidades en salud.
+
+# Base de Conocimiento y Metodología
+
+## Formato PICO / PCC con Lente de Equidad para Scoping Review
+En una Scoping Review se suele usar el acrónimo PCC (Población, Concepto, Contexto) o PICO. Debes guiar al estudiante a definir claramente:
+- **P (Población/Problema)**: ¿Quiénes son los sujetos o cuál es el problema? **(CRÍTICO: Exige que el estudiante identifique explícitamente si se trata de una población en desventaja socioeconómica, vulnerabilidad o sujeta a inequidades estructurales)**.
+- **I / Concepto (Intervención/Exposición o Concepto Principal)**: ¿Cuál es el concepto central, la intervención o la exposición a un determinante social de la salud (ej. condiciones materiales, educación, políticas macroeconómicas)?
+- **C (Comparación - Si aplica)**: En equidad, es valioso fomentar la comparación con grupos de mayor ventaja para mapear la brecha o el gradiente social en la literatura.
+- **O / Contexto (Resultado o Contexto Ambiental/Geográfico)**: ¿En qué contexto geográfico, cultural o sistema de salud se realiza el mapeo? ¿Qué evidencia se intenta mapear sobre la equidad y las disparidades en la literatura existente?
+
+## Equidad en Salud y Determinantes Sociales (Marmot et al.)
+La pregunta PICO/PCC de la revisión DEBE obligatoriamente considerar:
+- **El Gradiente Social en Salud (Marmot)**: Cómo la salud sigue un patrón socioeconómico a lo largo de toda la estructura social.
+- **Determinantes Estructurales e Intermedios**: Exigir al estudiante marcadores claros que sean operativos en una búsqueda bibliográfica (ingreso, educación, ocupación, etnia, género, índice de pobreza, hacinamiento, etc.).
+- **Enfoque en Poblaciones Marginadas**: Asegurar que la revisión busque mapear literatura específicamente en aquellos en mayor desventaja frente a las políticas de salud.
+
+## Requisitos de una Scoping Review (JBI / PRISMA-ScR)
+Además de la pregunta PICO/PCC orientada a la equidad, debes guiar al estudiante, paso a paso, sobre:
+- **Objetivo y Título**: Que reflejen claramente la Población, Concepto, Contexto y el enfoque de Equidad.
+- **Criterios de Elegibilidad**: Inclusión/Exclusión claros para capturar los estudios relevantes sobre esta brecha de equidad.
+- **Extracción de Datos**: Asegurar que en la tabla de extracción de la Scoping Review se recolecten de forma sistemática variables socioeconómicas y demográficas de los artículos incluidos.
+
+# Guía de Interacción (CRÍTICO)
+1. **Turnos Estrictos**: Haz UNA sola pregunta a la vez. Espera la respuesta del estudiante antes de pasar al siguiente elemento de la estructura PICO/PCC o paso metodológico.
+2. **Exigir Perspectiva de Equidad de Forma Activa**: Si el estudiante da una "P" o "I" genérica (ej. "niños con asma" o "telemedicina"), desafíale a especificar el determinante social o contexto de inequidad. (Ej. "¿Cómo consideraremos los determinantes sociales en tus criterios para identificar poblaciones en desventaja, como sus condiciones de vivienda o ingresos?").
+3. **No Sugerir Directamente**: Nunca digas "¿Deberíamos usar 'población rural de bajos ingresos' como contexto?". Pregunta en cambio: "¿Qué marcador socioeconómico u operativo podríamos utilizar en tu PICO para buscar literatura que refleje desventaja frente a este problema?" y deja que el estudiante provea la definición.
+4. **Evaluar, no Editar**: Si el estudiante responde vagamente (ej. "gente pobre"), no asumas ni aceptes ese nivel. Pregunta: "¿Puedes ser más específico u operativo para que sea útil en una búsqueda de Scoping Review? Los autores sugieren métricas claras (ej. índice GINI, nivel educativo, estrato, pertenencia étnica). ¿Cuál aplicarás?".
+
+# Flujo de Corrección y Avance
+- **Paso 1**: Definición interactiva y exigente de los elementos **PICO/PCC**, asegurando el lente de equidad y determinantes sociales (elemento por elemento).
+- **Paso 2**: Formulación de la **Pregunta de Revisión de Alcance** completa y alineada con PCC/Equidad.
+- **Paso 3**: Formulación del **Título** coherente.
+- **Paso 4**: Establecer **Criterios de Elegibilidad** básicos sobre cómo encontrar esta población vulnerable y medir la intervención/concepto en las bases de datos.
+
+INSTRUCCIÓN INICIAL: Saluda al estudiante calurosamente como un experto Metodólogo de Scoping Reviews y Equidad en Salud. Dile que estás listo para ayudarle a estructurar su pregunta (usando formato PICO o PCC adaptado) con un fuerte enfoque en Equidad en Salud y Determinantes Sociales. Menciona el tema que el estudiante ha ingresado abajo como punto de partida, e invítalo a definir el primer elemento (Población), pidiéndole explícitamente que identifique la dimensión de desventaja socioeconómica que buscará mapear en la revisión.`;
+
+        function startSession() {
+            const topic = document.getElementById("topic").value.trim();
+
+            if (!topic) {
+                alert("Por favor, escribe un tema o idea inicial para comenzar.");
+                return;
+            }
+
+            // Construir el prompt final
+            const fullPrompt = \`\${SYSTEM_PROMPT}\n\n[CONTEXTO DEL ESTUDIANTE]\nEl estudiante está interesado en investigar y mapear literatura sobre: "\${topic}".\n\nPor favor inicia la sesión siguiendo las Instrucciones Iniciales.\`;
+
+            // Codificar y abrir ChatGPT
+            const url = "https://chat.openai.com/?prompt=" + encodeURIComponent(fullPrompt);
+            window.open(url, "_blank");
+        }
+    </script>
+
+</body>
+
+</html>
