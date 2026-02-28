@@ -184,8 +184,8 @@ INSTRUCCIÓN INICIAL: Saluda al estudiante calurosamente como un experto Metodó
             // Construir el prompt final
             const fullPrompt = `${SYSTEM_PROMPT}\n\n[CONTEXTO DEL ESTUDIANTE]\nEl estudiante está interesado en investigar y mapear literatura sobre: "${topic}".\n\nPor favor inicia la sesión siguiendo las Instrucciones Iniciales.`;
 
-            // Codificar y abrir ChatGPT
-            const url = "https://chat.openai.com/?prompt=" + encodeURIComponent(fullPrompt);
+            // Codificar y abrir ChatGPT usando la URL más actual
+            const url = "https://chatgpt.com/?q=" + encodeURIComponent(fullPrompt);
             window.open(url, "_blank");
         }
     </script>
